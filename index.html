@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lucas Curan Martins | Especialista em TI e Automação</title>
+<meta name="description" content="Profissional de TI com especializações em Cloud Computing e Engenharia de Automação">
+<style>
+  :root {
+    --primary-color: #0066cc;
+    --secondary-color: #004080;
+    --accent-color: #ff6b00;
+    --light-bg: #f8fafc;
+    --text-color: #333;
+    --light-text: #666;
+    --whatsapp-green: #25D366;
+  }
+  
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    background: var(--light-bg); color: var(--text-color); 
+    line-height:1.6; padding-top:120px;
+    position: relative;
+  }
+  header {
+    position: fixed; top:0; left:0; right:0; 
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color:#fff; height:120px; display:flex; flex-direction:column; 
+    justify-content:center; z-index:999; box-shadow:0 2px 10px rgba(0,0,0,0.2); 
+    padding:0 5%; transition: all 0.3s;
+  }
+  .header-container {
+    max-width:1200px; margin:0 auto; width:100%;
+  }
+  .header-top {
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .header-name {
+    font-size:28px; font-weight:700; letter-spacing:0.5px;
+  }
+  .header-contact {
+    font-size:15px; text-align:right; line-height:1.4;
+  }
+  .header-contact a {
+    color: #fff; text-decoration: none; transition: all 0.3s;
+  }
+  .header-contact a:hover {
+    color: var(--accent-color);
+  }
+  nav {
+    width:100%; margin:15px auto 0 auto;
+    display:flex; justify-content:flex-start; gap:20px; font-weight:600;
+  }
+  nav a {
+    color:#eee; text-decoration:none; padding:6px 0; border-radius:4px;
+    transition: all 0.3s; font-size:15px; position:relative;
+  }
+  nav a:hover { color: var(--accent-color); }
+  nav a::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--accent-color);
+    transition: width 0.3s;
+  }
+  nav a:hover::after { width: 100%; }
+  main {
+    max-width:1000px; margin:30px auto 60px auto; background:#fff;
+    padding:40px 50px; box-shadow:0 5px 25px rgba(0,0,0,0.08); border-radius:10px;
+  }
+  section { margin-bottom:50px; }
+  section h2 {
+    margin-bottom:20px; color: var(--primary-color);
+    border-bottom:2px solid var(--primary-color); padding-bottom:8px;
+    font-size:24px; font-weight:600;
+  }
+  p, ul { margin-bottom:18px; font-size:16px; }
+  ul { list-style-type: none; }
+  li { position:relative; padding-left:25px; margin-bottom:10px; }
+  li::before {
+    content: "▹"; position: absolute; left: 0; 
+    color: var(--accent-color); font-size:18px;
+  }
+  .certificado-link {
+    display: inline-flex; align-items:center; margin-top: 10px;
+    color: var(--primary-color); text-decoration: none;
+    font-weight: 500; transition: all 0.3s; gap:6px;
+  }
+  .certificado-link:hover {
+    color: var(--secondary-color); text-decoration: underline;
+  }
+  .personal-info {
+    background:#f0f7ff; padding:20px; border-radius:8px;
+    margin-bottom:30px; font-size:15px; display:flex; gap:30px;
+    flex-wrap:wrap; border-left:4px solid var(--accent-color);
+  }
+  .info-item { display:flex; align-items:center; gap:8px; }
+  .info-item i { color: var(--primary-color); }
+  .projeto {
+    margin-bottom:25px; padding-bottom:25px; 
+    border-bottom:1px dashed #eee;
+  }
+  .projeto h3 {
+    color: var(--secondary-color); margin-bottom:10px;
+    font-size:18px; display:flex; align-items:center; gap:10px;
+  }
+  .projeto h3::before {
+    content: ""; display:inline-block;
+    width:12px; height:12px; background: var(--accent-color);
+    border-radius:2px;
+  }
+  .social-links {
+    display:flex; gap:15px; margin-top:15px;
+  }
+  .social-link {
+    display:flex; align-items:center; gap:8px;
+    padding:8px 15px; background:#f0f7ff; border-radius:6px;
+    color: var(--primary-color); text-decoration:none;
+    transition: all 0.3s; font-weight:500;
+  }
+  .social-link:hover {
+    background: var(--primary-color); color:#fff;
+    transform: translateY(-2px);
+  }
+  .skills-container {
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:20px; margin-top:20px;
+  }
+  .skill-category {
+    background:#f9f9f9; padding:20px; border-radius:8px;
+    border-left:3px solid var(--accent-color);
+  }
+  .skill-category h3 {
+    margin-bottom:15px; color: var(--secondary-color);
+    font-size:18px;
+  }
+  
+  /* Botão do WhatsApp */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--whatsapp-green);
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+  
+  .whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .whatsapp-float i {
+    margin-top: 2px;
+  }
+  
+  .whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+  }
+  
+  .whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  @media (max-width:768px) {
+    body { padding-top:160px; }
+    header { height:160px; padding:15px; }
+    .header-top { flex-direction:column; text-align:center; gap:10px; }
+    .header-contact { text-align:center; }
+    .header-name { font-size:24px; }
+    nav { justify-content:center; flex-wrap:wrap; gap:15px; }
+    main { padding:25px; }
+    .personal-info { gap:15px; }
+    .skills-container { grid-template-columns:1fr; }
+    .whatsapp-float {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      bottom: 20px;
+      right: 20px;
+    }
+    .whatsapp-tooltip {
+      display: none;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="header-top">
+      <div class="header-name">LUCAS CURAN MARTINS</div>
+      <div class="header-contact">
+        <div><i class="fas fa-map-marker-alt"></i> Jardim Cristo Redentor, Ribeirão Preto/SP</div>
+        <div><i class="fas fa-phone"></i> (16) 99185-4195 | <i class="fas fa-envelope"></i> <a href="mailto:lucascuranmartins@gmail.com">lucascuranmartins@gmail.com</a></div>
+      </div>
+    </div>
+    <nav>
+      <a href="#sobre"><i class="fas fa-user"></i> Sobre</a>
+      <a href="#formacao"><i class="fas fa-graduation-cap"></i> Formação</a>
+      <a href="#experiencia"><i class="fas fa-briefcase"></i> Experiência</a>
+      <a href="#habilidades"><i class="fas fa-code"></i> Habilidades</a>
+      <a href="#projetos"><i class="fas fa-project-diagram"></i> Projetos</a>
+      <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="sobre">
+    <h2><i class="fas fa-user-tie"></i> Sobre Mim</h2>
+    <div class="personal-info">
+      <div class="info-item"><i class="fas fa-passport"></i> Brasileiro</div>
+      <div class="info-item"><i class="fas fa-heart"></i> Estado Civil: Divorciado</div>
+      <div class="info-item"><i class="fas fa-child"></i> Filhos: Não</div>
+      <div class="info-item"><i class="fas fa-car"></i> CNH Categoria A/B</div>
+      <div class="info-item"><i class="fas fa-suitcase-rolling"></i> Disponibilidade para viagens</div>
+    </div>
+    <p>Profissional técnico altamente qualificado com formação em Análise e Desenvolvimento de Sistemas e especializações em Engenharia de Automação/IoT e Data Center/Cloud Computing. Possuo experiência sólida em suporte técnico, manutenção de hardware e implementação de soluções de TI, combinando conhecimentos teóricos e práticos para resolver problemas complexos.</p>
+    <p>Minha abordagem profissional é focada em eficiência, organização e melhoria contínua, com habilidades comprovadas em gestão de infraestrutura tecnológica e implementação de sistemas automatizados.</p>
+  </section>
+
+  <section id="formacao">
+    <h2><i class="fas fa-university"></i> Formação Acadêmica</h2>
+    
+    <div class="projeto">
+      <h3>Pós-Graduação em Engenharia de Automação e IoT</h3>
+      <p><strong>Universidade Pitágoras Unopar Anhanguera</strong> - Concluído em Janeiro/2025</p>
+      <p>Especialização focada em sistemas embarcados, automação industrial, instrumentação e controle, com 360 horas de carga horária. Desenvolvimento de projetos práticos integrando hardware e software para automação de processos.</p>
+    </div>
+    
+    <div class="projeto">
+      <h3>Pós-Graduação em Data Center e Computação em Nuvem</h3>
+      <p><strong>Universidade Pitágoras Unopar Anhanguera</strong> - Concluído em Fevereiro/2025</p>
+      <p>Especialização com ênfase em tecnologias de cloud computing, infraestrutura de data centers e virtualização (360 horas). Abordagem prática em migração para nuvem, segurança de dados e otimização de recursos computacionais.</p>
+    </div>
+    
+    <div class="projeto">
+      <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+      <p><strong>Claretiano - Centro Universitário</strong> - Concluído em Agosto/2023</p>
+      <p>Formação abrangente em desenvolvimento de software, abrangendo algoritmos, estruturas de dados, banco de dados, desenvolvimento web e engenharia de software. Base sólida para atuar em todas as fases do ciclo de vida de desenvolvimento de sistemas.</p>
+      <a href="https://claretiano.webapp.abaris.com.br/diploma/135.135.e2c543b254ca" target="_blank" class="certificado-link">
+        <i class="fas fa-external-link-alt"></i> Ver diploma (código: 135.135.e2c543b254ca)
+      </a>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+    
+    <div class="projeto">
+      <h3>Técnico de Laboratório de Informática</h3>
+      <p><strong>Tecnodata</strong> - Ribeirão Preto/SP</p>
+      <ul>
+        <li>Execução de manutenção avançada em computadores e notebooks, incluindo diagnóstico preciso e substituição de componentes eletrônicos.</li>
+        <li>Reorganização completa do ambiente de armazenamento técnico, implementando metodologias 5S e Kanban, resultando em aumento de 30% na eficiência operacional.</li>
+        <li>Gestão de inventário técnico com identificação proativa de gaps logísticos, desenvolvendo sistema de controle que reduziu perdas em 25%.</li>
+        <li>Documentação técnica detalhada de procedimentos e configurações para padronização dos serviços.</li>
+      </ul>
+    </div>
+    
+    <div class="projeto">
+      <h3>Técnico de Informática e Suporte de Campo</h3>
+      <p><strong>Vogliatec</strong> - Ribeirão Preto/SP</p>
+      <ul>
+        <li>Atendimento técnico especializado para clientes corporativos e residenciais, com taxa de resolução no primeiro atendimento superior a 85%.</li>
+        <li>Gestão estratégica de estoque de peças técnicas, desenvolvendo modelo de reposição que otimizou o capital de giro em 20%.</li>
+        <li>Prestação de suporte técnico remoto e presencial, incluindo manutenção preventiva e corretiva em diversos ambientes.</li>
+        <li>Liderança na padronização de processos técnicos e criação de documentação para o time de suporte.</li>
+        <li>Implementação de sistema de ticket que melhorou o tempo médio de resolução de chamados em 35%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <h2><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h2>
+    
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Programação</h3>
+        <ul>
+          <li>Python (Intermediário)</li>
+          <li>C/C++ (Intermediário)</li>
+          <li>JavaScript (Básico)</li>
+          <li>Lógica de Programação</li>
+          <li>Algoritmos e Estruturas de Dados</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-cloud"></i> Cloud & Data Center</h3>
+        <ul>
+          <li>Infraestrutura de Data Centers</li>
+          <li>Virtualização (VMware, Hyper-V)</li>
+          <li>Cloud Computing (AWS, Azure básico)</li>
+          <li>Armazenamento em Nuvem</li>
+          <li>Migração para Cloud</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-microchip"></i> Automação & IoT</h3>
+        <ul>
+          <li>Controladores Lógicos Programáveis (CLPs)</li>
+          <li>Sensores e Atuadores</li>
+          <li>Sistemas Embarcados</li>
+          <li>Protocolos de Comunicação Industrial</li>
+          <li>Arduino e Raspberry Pi</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-network-wired"></i> Redes & Infraestrutura</h3>
+        <ul>
+          <li>TCP/IP e Modelo OSI</li>
+          <li>Cabeamento Estruturado</li>
+          <li>Roteadores e Switches</li>
+          <li>Wi-Fi Corporativo</li>
+          <li>Segurança Básica de Redes</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-desktop"></i> Hardware & Sistemas</h3>
+        <ul>
+          <li>Montagem e Manutenção de Computadores</li>
+          <li>Diagnóstico Avançado de Hardware</li>
+          <li>Windows (Todas versões)</li>
+          <li>Linux (Intermediário)</li>
+          <li>Virtualização</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-tools"></i> Ferramentas</h3>
+        <ul>
+          <li>Pacote Office Avançado</li>
+          <li>Sistemas ERP</li>
+          <li>Softwares de Helpdesk</li>
+          <li>Controle de Inventário</li>
+          <li>Ferramentas de Diagnóstico</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2><i class="fas fa-project-diagram"></i> Projetos Relevantes</h2>
+    
+    <div class="projeto">
+      <h3>Sistema Integrado de Automação Residencial com IoT</h3>
+      <p>Projeto desenvolvido durante a pós-graduação em Engenharia de Automação, criando solução completa para controle remoto de dispositivos domésticos utilizando Arduino, sensores IoT e interface web personalizada.</p>
+      <ul>
+        <li>Integração de múltiplos protocolos de comunicação (MQTT, HTTP)</li>
+        <li>Desenvolvimento de dashboard para monitoramento em tempo real</li>
+        <li>Implementação de rotinas automatizadas baseadas em sensores</li>
+        <li>Sistema de alertas via e-mail e notificações push</li>
+      </ul>
+    </div>
+    
+    <div class="projeto">
+      <h3>Migração para Infraestrutura Cloud Híbrida</h3>
+      <p>Planejamento e execução de migração de infraestrutura física para ambiente cloud híbrido para empresa de médio porte, resultando em maior disponibilidade e redução de custos.</p>
+      <ul>
+        <li>Análise de custo-benefício entre diferentes provedores cloud</li>
+        <li>Configuração de ambiente híbrido (local + nuvem)</li>
+        <li>Implementação de políticas de backup e recuperação de desastres</li>
+        <li>Redução de 40% nos custos com infraestrutura física</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2><i class="fas fa-envelope-open-text"></i> Contato</h2>
+    <p>Estou disponível para novas oportunidades e colaborações. Fique à vontade para entrar em contato:</p>
+    
+    <div class="personal-info">
+      <div class="info-item"><i class="fas fa-phone"></i> (16) 99185-4195</div>
+      <div class="info-item"><i class="fas fa-envelope"></i> lucascuranmartins@gmail.com</div>
+      <div class="info-item"><i class="fas fa-map-marker-alt"></i> Jardim Cristo Redentor, Ribeirão Preto/SP</div>
+    </div>
+    
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/lucas-martins-b1a47b197/" target="_blank" class="social-link">
+        <i class="fab fa-linkedin-in"></i> LinkedIn
+      </a>
+     
+    </div>
+  </section>
+</main>
+
+<!-- Botão do WhatsApp -->
+<a href="https://wa.me/5516991854195" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+  <span class="whatsapp-tooltip">Fale comigo no WhatsApp</span>
+</a>
+
+</body>
+</html>
